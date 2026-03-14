@@ -13,6 +13,8 @@
   --line: rgba(31, 36, 48, 0.12);
   --shadow: 0 24px 50px rgba(31, 36, 48, 0.1);
   --shadow-soft: 0 12px 24px rgba(31, 36, 48, 0.08);
+  --shadow-lift: 0 22px 44px rgba(31, 36, 48, 0.14);
+  --glow-soft: 0 0 0 1px rgba(255, 255, 255, 0.35) inset;
   --radius-xl: 32px;
   --radius-lg: 24px;
   --radius-md: 18px;
@@ -36,6 +38,7 @@ body {
   color: var(--ink);
   background:
     radial-gradient(circle at top left, rgba(214, 166, 70, 0.18), transparent 16rem),
+    radial-gradient(circle at 85% 8%, rgba(41, 91, 71, 0.14), transparent 20rem),
     linear-gradient(180deg, #fbf7f0 0%, #f4efe7 100%);
 }
 
@@ -286,12 +289,13 @@ textarea {
   border-radius: 999px;
   font-size: 0.96rem;
   font-weight: 800;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease, filter 0.22s ease;
 }
 
 .btn:hover,
 .header-cta:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px) scale(1.01);
+  filter: saturate(1.04);
 }
 
 .btn-primary,
@@ -407,6 +411,7 @@ textarea {
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease, background-color 0.24s ease;
 }
 
 .contact-cards {
@@ -414,7 +419,86 @@ textarea {
 }
 
 .contact-card {
+  position: relative;
+  overflow: hidden;
   padding: 20px;
+}
+
+.contact-card::before,
+.spotlight-card::before,
+.info-card::before,
+.store-item::before,
+.store-logo-card::before,
+.order-form::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.24), transparent 42%);
+  opacity: 0;
+  transition: opacity 0.24s ease;
+  pointer-events: none;
+}
+
+.contact-card:hover,
+.spotlight-card:hover,
+.info-card:hover,
+.store-item:hover,
+.store-logo-card:hover,
+.order-form:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+  border-color: rgba(31, 36, 48, 0.18);
+}
+
+.contact-card:hover::before,
+.spotlight-card:hover::before,
+.info-card:hover::before,
+.store-item:hover::before,
+.store-logo-card:hover::before,
+.order-form:hover::before {
+  opacity: 1;
+}
+
+.whatsapp-button,
+.instagram-button {
+  border: none;
+  color: var(--white);
+}
+
+.whatsapp-button {
+  background: linear-gradient(180deg, #2ad06b, #128c47);
+  box-shadow: 0 16px 28px rgba(18, 140, 71, 0.24);
+}
+
+.instagram-button {
+  background:
+    radial-gradient(circle at 20% 120%, #fdf497 0%, #fdf497 12%, #fd5949 42%, #d6249f 68%, #285aeb 100%);
+  box-shadow: 0 16px 28px rgba(214, 36, 159, 0.22);
+}
+
+.social-button-content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.social-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 48px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  backdrop-filter: blur(8px);
+}
+
+.social-icon svg {
+  width: 26px;
+  height: 26px;
+  fill: currentColor;
 }
 
 .contact-card strong {
@@ -435,6 +519,15 @@ textarea {
   font-size: 0.92rem;
 }
 
+.whatsapp-button strong,
+.whatsapp-button span,
+.whatsapp-button small,
+.instagram-button strong,
+.instagram-button span,
+.instagram-button small {
+  color: var(--white);
+}
+
 .location-grid {
   grid-template-columns: 1fr;
 }
@@ -445,6 +538,7 @@ textarea {
 }
 
 .spotlight-card {
+  position: relative;
   overflow: hidden;
 }
 
@@ -452,6 +546,13 @@ textarea {
   width: 100%;
   height: 220px;
   object-fit: cover;
+  transition: transform 0.5s ease, filter 0.35s ease;
+}
+
+.spotlight-card:hover img,
+.store-photo:hover img {
+  transform: scale(1.04);
+  filter: saturate(1.04) contrast(1.02);
 }
 
 .spotlight-card div,
@@ -474,12 +575,22 @@ textarea {
 }
 
 .map-card {
+  position: relative;
   overflow: hidden;
   min-height: 340px;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background: var(--surface-strong);
   box-shadow: var(--shadow-soft);
+}
+
+.map-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 84px;
+  background: linear-gradient(180deg, transparent, rgba(255, 250, 244, 0.16));
+  pointer-events: none;
 }
 
 .map-card iframe {
@@ -494,7 +605,9 @@ textarea {
 }
 
 .order-form {
+  position: relative;
   padding: 18px;
+  box-shadow: var(--shadow-soft), var(--glow-soft);
 }
 
 .field-grid {
@@ -524,6 +637,7 @@ textarea {
   border-radius: var(--radius-sm);
   background: #fffdf9;
   color: var(--ink);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
 }
 
 .field-group textarea {
@@ -542,6 +656,8 @@ textarea {
 .field-group textarea:focus {
   outline: 2px solid rgba(214, 166, 70, 0.28);
   border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(214, 166, 70, 0.08);
+  transform: translateY(-1px);
 }
 
 .form-submit {
@@ -579,6 +695,7 @@ textarea {
   border-radius: var(--radius-lg);
   background: #fffdf9;
   border: 1px solid rgba(31, 36, 48, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 .cart-header {
@@ -615,6 +732,13 @@ textarea {
   border: 1px solid rgba(31, 36, 48, 0.08);
   border-radius: var(--radius-md);
   background: var(--surface);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 24px rgba(31, 36, 48, 0.08);
+  border-color: rgba(31, 36, 48, 0.14);
 }
 
 .cart-item-top {
@@ -636,6 +760,14 @@ textarea {
   color: var(--ink);
   font-weight: 700;
   cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.cart-item-top button:hover,
+.cart-stepper:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(31, 36, 48, 0.1);
+  border-color: rgba(31, 36, 48, 0.18);
 }
 
 .cart-item-controls {
@@ -663,6 +795,7 @@ textarea {
   cursor: pointer;
   font-size: 1.2rem;
   line-height: 1;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
 .section-stores {
@@ -676,6 +809,7 @@ textarea {
 }
 
 .store-item {
+  position: relative;
   display: block;
   padding: 18px;
   color: inherit;
@@ -698,9 +832,18 @@ textarea {
 }
 
 .store-photo {
+  position: relative;
   overflow: hidden;
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow);
+}
+
+.store-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 45%, rgba(12, 10, 9, 0.12));
+  pointer-events: none;
 }
 
 .store-photo img {
@@ -708,13 +851,18 @@ textarea {
   height: 100%;
   min-height: 260px;
   object-fit: cover;
+  transition: transform 0.5s ease, filter 0.35s ease;
 }
 
 .store-logo-card {
+  position: relative;
   display: grid;
   place-items: center;
   min-height: 220px;
   padding: 24px;
+  background:
+    radial-gradient(circle at top, rgba(214, 166, 70, 0.14), transparent 55%),
+    var(--surface);
 }
 
 .store-logo-card img {
@@ -752,6 +900,38 @@ textarea {
   color: var(--white);
   font-size: 2rem;
   box-shadow: 0 14px 24px rgba(31, 138, 85, 0.24);
+  animation: floatingPulse 2.8s ease-in-out infinite;
+}
+
+.floating-whatsapp:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 18px 32px rgba(31, 138, 85, 0.32);
+}
+
+@keyframes floatingPulse {
+  0%,
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 14px 24px rgba(31, 138, 85, 0.24);
+  }
+
+  50% {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 34px rgba(31, 138, 85, 0.3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 @media (min-width: 768px) {
