@@ -547,7 +547,7 @@ textarea {
 .instagram-button strong,
 .instagram-button span,
 .instagram-button small {
-  color: var(--white);
+  color: #000;
 }
 
 .whatsapp-button small,
