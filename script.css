@@ -720,6 +720,11 @@ textarea {
     padding-bottom: 88px;
   }
 
+  .hero::after {
+    background:
+      linear-gradient(90deg, rgba(12, 10, 9, 0.62) 0%, rgba(12, 10, 9, 0.46) 34%, rgba(12, 10, 9, 0.18) 58%, #f4efe7 100%);
+  }
+
   .hero-layout {
     grid-template-columns: 0.98fr 1.02fr;
     gap: 34px;
@@ -727,6 +732,22 @@ textarea {
 
   .hero-copy {
     padding-top: 40px;
+    max-width: 620px;
+  }
+
+  .hero h1 {
+    text-shadow: 0 12px 34px rgba(0, 0, 0, 0.28);
+  }
+
+  .hero p {
+    color: rgba(255, 250, 244, 0.94);
+    text-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  }
+
+  .hero-points span,
+  .eyebrow {
+    background: rgba(15, 11, 10, 0.34);
+    border: 1px solid rgba(255, 250, 244, 0.12);
   }
 
   .hero-photo-card img {
