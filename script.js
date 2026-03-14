@@ -3,7 +3,6 @@ const mainNav = document.querySelector(".main-nav");
 const navLinks = document.querySelectorAll(".main-nav a");
 
 const orderForm = document.querySelector("#order-form");
-const addButtons = document.querySelectorAll("[data-add-item]");
 const quickCut = document.querySelector("#quick-cut");
 const quickWeight = document.querySelector("#quick-weight");
 const addQuickItemButton = document.querySelector("#add-quick-item");
@@ -116,13 +115,6 @@ function addItemToCart(cut, weight = 1) {
 
   renderCart();
 }
-
-addButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const cut = button.getAttribute("data-add-item");
-    addItemToCart(cut, 1);
-  });
-});
 
 if (addQuickItemButton && quickCut && quickWeight) {
   addQuickItemButton.addEventListener("click", () => {

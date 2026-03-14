@@ -28,7 +28,7 @@
 
         <nav class="main-nav" id="main-nav" aria-label="Menu principal">
           <a href="#inicio">Inicio</a>
-          <a href="#cortes">Cortes</a>
+          <a href="#localizacao">Localizacao</a>
           <a href="#carrinho">Carrinho</a>
           <a href="#lojas">Lojas</a>
           <a href="#contato">Contato</a>
@@ -50,7 +50,7 @@
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#carrinho">Fazer pedido</a>
-            <a class="btn btn-secondary" href="#cortes">Ver cortes</a>
+            <a class="btn btn-secondary" href="#localizacao">Ver localizacao</a>
           </div>
 
           <div class="hero-points">
@@ -106,119 +106,39 @@
         </div>
       </section>
 
-      <section class="section section-cuts" id="cortes">
+      <section class="section section-location" id="localizacao">
         <div class="container">
           <div class="section-heading">
             <div>
-              <p class="section-kicker">Tabela de cortes</p>
-              <h2>Todos os cortes organizados em uma tabela simples</h2>
+              <p class="section-kicker">Localizacao e mapa</p>
+              <h2>Veja onde estamos e fale com a unidade mais conveniente</h2>
             </div>
           </div>
 
-          <div class="cuts-grid">
-            <div class="cuts-overview">
-              <article class="spotlight-card">
-                <img src="./assets/carne-contra-file.jpeg" alt="Contra file Frigorifico Carne Boa" />
-                <div>
-                  <h3>Cortes selecionados</h3>
-                  <p>Visual limpo para consulta rapida, sem preco na tela e com foco em fazer o pedido.</p>
-                </div>
+          <div class="location-grid">
+            <div class="location-copy">
+              <article class="info-card">
+                <h3>Endereco principal</h3>
+                <p>Av. Rodolfo Chermont 1146, Belem, Brazil</p>
+                <p>Use o carrinho para montar seu pedido e depois escolha Loja 01 ou Loja 02 para receber o orcamento pelo WhatsApp.</p>
               </article>
 
-              <article class="info-card">
-                <h3>Como funciona</h3>
-                <p>1. Escolha o corte na tabela e adicione ao carrinho.</p>
-                <p>2. Ajuste o peso desejado em kg para cada item.</p>
-                <p>3. Selecione Loja 01 ou Loja 02.</p>
-                <p>4. Envie o carrinho para receber o orcamento no WhatsApp.</p>
+              <article class="spotlight-card">
+                <img src="./assets/foto-loja-1.jpeg" alt="Frente e ambiente interno da loja Carne Boa" />
+                <div>
+                  <h3>Atendimento local e digital</h3>
+                  <p>Voce pode visitar a loja ou enviar o pedido online. O site organiza os itens e o orcamento segue pelo canal oficial.</p>
+                </div>
               </article>
             </div>
 
-            <div class="cuts-table-wrap">
-              <table class="cuts-table">
-                <thead>
-                  <tr>
-                    <th>Corte</th>
-                    <th>Categoria</th>
-                    <th>Indicacao</th>
-                    <th>Pedido</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr data-cut="Agulha">
-                    <td>Agulha</td>
-                    <td>Bovino</td>
-                    <td>Panela e cozidos</td>
-                    <td><button class="table-action" type="button" data-add-item="Agulha">Adicionar</button></td>
-                  </tr>
-                  <tr data-cut="Alcatra">
-                    <td>Alcatra</td>
-                    <td>Bovino</td>
-                    <td>Bifes e grelha</td>
-                    <td><button class="table-action" type="button" data-add-item="Alcatra">Adicionar</button></td>
-                  </tr>
-                  <tr data-cut="Contra file">
-                    <td>Contra file</td>
-                    <td>Bovino</td>
-                    <td>Churrasco e bifes</td>
-                    <td><button class="table-action" type="button" data-add-item="Contra file">Adicionar</button></td>
-                  </tr>
-                  <tr data-cut="Costela">
-                    <td>Costela</td>
-                    <td>Bovino</td>
-                    <td>Assados longos</td>
-                    <td><button class="table-action" type="button" data-add-item="Costela">Adicionar</button></td>
-                  </tr>
-                  <tr data-cut="Coxao mole">
-                    <td>Coxao mole</td>
-                    <td>Bovino</td>
-                    <td>Bifes e rolamentos</td>
-                    <td><button class="table-action" type="button" data-add-item="Coxao mole">Adicionar</button></td>
-                  </tr>
-                  <tr data-cut="Fraldinha">
-                    <td>Fraldinha</td>
-                    <td>Bovino</td>
-                    <td>Grelha e churrasco</td>
-                    <td><button class="table-action" type="button" data-add-item="Fraldinha">Adicionar</button></td>
-                  </tr>
-                  <tr data-cut="Musculo">
-                    <td>Musculo</td>
-                    <td>Bovino</td>
-                    <td>Caldos e cozidos</td>
-                    <td><button class="table-action" type="button" data-add-item="Musculo">Adicionar</button></td>
-                  </tr>
-                  <tr data-cut="Picanha">
-                    <td>Picanha</td>
-                    <td>Bovino</td>
-                    <td>Churrasco</td>
-                    <td><button class="table-action" type="button" data-add-item="Picanha">Adicionar</button></td>
-                  </tr>
-                  <tr data-cut="Peito">
-                    <td>Peito</td>
-                    <td>Bovino</td>
-                    <td>Defumados e cozidos</td>
-                    <td><button class="table-action" type="button" data-add-item="Peito">Adicionar</button></td>
-                  </tr>
-                  <tr data-cut="Frango inteiro">
-                    <td>Frango inteiro</td>
-                    <td>Aves</td>
-                    <td>Forno e assados</td>
-                    <td><button class="table-action" type="button" data-add-item="Frango inteiro">Adicionar</button></td>
-                  </tr>
-                  <tr data-cut="Coxa e sobrecoxa">
-                    <td>Coxa e sobrecoxa</td>
-                    <td>Aves</td>
-                    <td>Forno e frituras</td>
-                    <td><button class="table-action" type="button" data-add-item="Coxa e sobrecoxa">Adicionar</button></td>
-                  </tr>
-                  <tr data-cut="File de peito">
-                    <td>File de peito</td>
-                    <td>Aves</td>
-                    <td>Grelha e dia a dia</td>
-                    <td><button class="table-action" type="button" data-add-item="File de peito">Adicionar</button></td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="map-card">
+              <iframe
+                title="Mapa da localizacao do Frigorifico Carne Boa"
+                src="https://www.google.com/maps?q=Av.%20Rodolfo%20Chermont%201146%2C%20Belem&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
         </div>
@@ -351,7 +271,7 @@
 
         <nav class="footer-nav" aria-label="Menu do rodape">
           <a href="#inicio">Inicio</a>
-          <a href="#cortes">Cortes</a>
+          <a href="#localizacao">Localizacao</a>
           <a href="#carrinho">Carrinho</a>
           <a href="#lojas">Lojas</a>
           <a href="#contato">Contato</a>
