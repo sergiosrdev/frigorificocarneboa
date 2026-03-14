@@ -676,7 +676,10 @@ textarea {
 }
 
 .store-item {
+  display: block;
   padding: 18px;
+  color: inherit;
+  text-decoration: none;
 }
 
 .store-item strong {
