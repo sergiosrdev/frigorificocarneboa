@@ -142,7 +142,7 @@ if (orderForm) {
     }
 
     const name = document.querySelector("#customer-name")?.value.trim();
-    const phone = document.querySelector("#customer-phone")?.value.trim();
+    const address = document.querySelector("#customer-address")?.value.trim();
     const storePhone = document.querySelector("#order-store")?.value;
     const storeName = document.querySelector("#order-store")?.selectedOptions[0]?.textContent.trim();
     const notes = document.querySelector("#order-notes")?.value.trim();
@@ -153,7 +153,7 @@ if (orderForm) {
       "Ola! Quero solicitar um orcamento no Frigorifico Carne Boa.",
       `Loja escolhida: ${storeName}`,
       `Nome: ${name}`,
-      `Telefone: ${phone}`,
+      `Endereco: ${address}`,
       "Itens do carrinho:",
       items,
       notes ? `Observacoes: ${notes}` : null,
