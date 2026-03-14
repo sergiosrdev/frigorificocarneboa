@@ -29,12 +29,12 @@
         <nav class="main-nav" id="main-nav" aria-label="Menu principal">
           <a href="#inicio">Inicio</a>
           <a href="#cortes">Cortes</a>
-          <a href="#pedido">Pedido</a>
+          <a href="#carrinho">Carrinho</a>
           <a href="#lojas">Lojas</a>
           <a href="#contato">Contato</a>
         </nav>
 
-        <a class="header-cta" href="#pedido">Montar pedido</a>
+        <a class="header-cta" href="#carrinho">Montar pedido</a>
       </div>
     </header>
 
@@ -43,20 +43,20 @@
         <div class="container hero-layout">
           <div class="hero-copy">
             <div class="eyebrow">Atendimento rapido para pedidos em telas pequenas</div>
-            <h1>Escolha o corte, informe os quilos e envie seu pedido para a loja certa.</h1>
-            <p>
-              Uma experiencia pensada para celular, com navegacao simples, cortes organizados em tabela e formulario direto para WhatsApp.
-            </p>
+          <h1>Escolha o corte, informe os quilos e envie seu pedido para a loja certa.</h1>
+          <p>
+            Uma experiencia pensada para celular, com navegacao simples, carrinho por quilo e valores informados somente pelos canais oficiais no WhatsApp.
+          </p>
 
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#pedido">Fazer pedido</a>
-              <a class="btn btn-secondary" href="#cortes">Ver cortes</a>
-            </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#carrinho">Fazer pedido</a>
+            <a class="btn btn-secondary" href="#cortes">Ver cortes</a>
+          </div>
 
-            <div class="hero-points">
-              <span>Pedido por quilo</span>
-              <span>Loja 01 e Loja 02</span>
-              <span>Fluxo mobile-first</span>
+          <div class="hero-points">
+            <span>Pedido por quilo</span>
+            <span>Loja 01 e Loja 02</span>
+            <span>Valores so no WhatsApp</span>
             </div>
           </div>
 
@@ -127,10 +127,10 @@
 
               <article class="info-card">
                 <h3>Como funciona</h3>
-                <p>1. Escolha o corte na tabela.</p>
-                <p>2. Informe o peso desejado em kg.</p>
+                <p>1. Escolha o corte na tabela e adicione ao carrinho.</p>
+                <p>2. Ajuste o peso desejado em kg para cada item.</p>
                 <p>3. Selecione Loja 01 ou Loja 02.</p>
-                <p>4. Envie tudo pronto pelo WhatsApp.</p>
+                <p>4. Envie o carrinho para receber o orcamento no WhatsApp.</p>
               </article>
             </div>
 
@@ -141,68 +141,81 @@
                     <th>Corte</th>
                     <th>Categoria</th>
                     <th>Indicacao</th>
+                    <th>Pedido</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr data-cut="Agulha">
                     <td>Agulha</td>
                     <td>Bovino</td>
                     <td>Panela e cozidos</td>
+                    <td><button class="table-action" type="button" data-add-item="Agulha">Adicionar</button></td>
                   </tr>
-                  <tr>
+                  <tr data-cut="Alcatra">
                     <td>Alcatra</td>
                     <td>Bovino</td>
                     <td>Bifes e grelha</td>
+                    <td><button class="table-action" type="button" data-add-item="Alcatra">Adicionar</button></td>
                   </tr>
-                  <tr>
+                  <tr data-cut="Contra file">
                     <td>Contra file</td>
                     <td>Bovino</td>
                     <td>Churrasco e bifes</td>
+                    <td><button class="table-action" type="button" data-add-item="Contra file">Adicionar</button></td>
                   </tr>
-                  <tr>
+                  <tr data-cut="Costela">
                     <td>Costela</td>
                     <td>Bovino</td>
                     <td>Assados longos</td>
+                    <td><button class="table-action" type="button" data-add-item="Costela">Adicionar</button></td>
                   </tr>
-                  <tr>
+                  <tr data-cut="Coxao mole">
                     <td>Coxao mole</td>
                     <td>Bovino</td>
                     <td>Bifes e rolamentos</td>
+                    <td><button class="table-action" type="button" data-add-item="Coxao mole">Adicionar</button></td>
                   </tr>
-                  <tr>
+                  <tr data-cut="Fraldinha">
                     <td>Fraldinha</td>
                     <td>Bovino</td>
                     <td>Grelha e churrasco</td>
+                    <td><button class="table-action" type="button" data-add-item="Fraldinha">Adicionar</button></td>
                   </tr>
-                  <tr>
+                  <tr data-cut="Musculo">
                     <td>Musculo</td>
                     <td>Bovino</td>
                     <td>Caldos e cozidos</td>
+                    <td><button class="table-action" type="button" data-add-item="Musculo">Adicionar</button></td>
                   </tr>
-                  <tr>
+                  <tr data-cut="Picanha">
                     <td>Picanha</td>
                     <td>Bovino</td>
                     <td>Churrasco</td>
+                    <td><button class="table-action" type="button" data-add-item="Picanha">Adicionar</button></td>
                   </tr>
-                  <tr>
+                  <tr data-cut="Peito">
                     <td>Peito</td>
                     <td>Bovino</td>
                     <td>Defumados e cozidos</td>
+                    <td><button class="table-action" type="button" data-add-item="Peito">Adicionar</button></td>
                   </tr>
-                  <tr>
+                  <tr data-cut="Frango inteiro">
                     <td>Frango inteiro</td>
                     <td>Aves</td>
                     <td>Forno e assados</td>
+                    <td><button class="table-action" type="button" data-add-item="Frango inteiro">Adicionar</button></td>
                   </tr>
-                  <tr>
+                  <tr data-cut="Coxa e sobrecoxa">
                     <td>Coxa e sobrecoxa</td>
                     <td>Aves</td>
                     <td>Forno e frituras</td>
+                    <td><button class="table-action" type="button" data-add-item="Coxa e sobrecoxa">Adicionar</button></td>
                   </tr>
-                  <tr>
+                  <tr data-cut="File de peito">
                     <td>File de peito</td>
                     <td>Aves</td>
                     <td>Grelha e dia a dia</td>
+                    <td><button class="table-action" type="button" data-add-item="File de peito">Adicionar</button></td>
                   </tr>
                 </tbody>
               </table>
@@ -211,14 +224,18 @@
         </div>
       </section>
 
-      <section class="section section-order" id="pedido">
+      <section class="section section-order" id="carrinho">
         <div class="container order-layout">
           <div class="order-copy">
-            <p class="section-kicker">Formulario de pedido</p>
-            <h2>Monte o pedido e envie com um toque</h2>
+            <p class="section-kicker">Carrinho e orcamento</p>
+            <h2>Monte o carrinho e solicite o orcamento da loja</h2>
             <p>
-              Preencha seu nome, escolha o corte, informe quantos quilos deseja e selecione para qual loja o pedido deve ser enviado.
+              Nenhum valor aparece no site. Os itens do carrinho sao enviados para a unidade escolhida, que responde com o orcamento diretamente pelo WhatsApp.
             </p>
+            <div class="cart-rule">
+              <strong>Regra do site</strong>
+              <span>Qualquer referencia a valores deve ser tratada somente pelos canais de WhatsApp.</span>
+            </div>
           </div>
 
           <form class="order-form" id="order-form">
@@ -244,8 +261,8 @@
 
             <div class="field-grid">
               <div class="field-group">
-                <label for="order-cut">Corte desejado</label>
-                <select id="order-cut" name="order-cut" required>
+                <label for="quick-cut">Adicionar corte rapido</label>
+                <select id="quick-cut" name="quick-cut">
                   <option value="">Selecione um corte</option>
                   <option>Agulha</option>
                   <option>Alcatra</option>
@@ -263,8 +280,21 @@
               </div>
 
               <div class="field-group">
-                <label for="order-weight">Peso desejado em kg</label>
-                <input id="order-weight" name="order-weight" type="number" min="0.5" step="0.5" placeholder="Ex: 2.5" required />
+                <label for="quick-weight">Peso inicial em kg</label>
+                <div class="inline-field">
+                  <input id="quick-weight" name="quick-weight" type="number" min="0.5" step="0.5" placeholder="Ex: 2.5" />
+                  <button class="btn btn-neutral" id="add-quick-item" type="button">Adicionar</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="cart-panel">
+              <div class="cart-header">
+                <h3>Itens do carrinho</h3>
+                <span id="cart-count">0 itens</span>
+              </div>
+              <div class="cart-items" id="cart-items">
+                <p class="cart-empty">Seu carrinho esta vazio. Adicione cortes pela tabela ou pelo seletor acima.</p>
               </div>
             </div>
 
@@ -273,7 +303,7 @@
               <textarea id="order-notes" name="order-notes" rows="4" placeholder="Ex: cortar em bifes, separar gordura, entregar hoje..."></textarea>
             </div>
 
-            <button class="btn btn-primary form-submit" type="submit">Enviar pedido no WhatsApp</button>
+            <button class="btn btn-primary form-submit" type="submit">Solicitar orcamento no WhatsApp</button>
           </form>
         </div>
       </section>
@@ -322,14 +352,14 @@
         <nav class="footer-nav" aria-label="Menu do rodape">
           <a href="#inicio">Inicio</a>
           <a href="#cortes">Cortes</a>
-          <a href="#pedido">Pedido</a>
+          <a href="#carrinho">Carrinho</a>
           <a href="#lojas">Lojas</a>
           <a href="#contato">Contato</a>
         </nav>
       </div>
     </footer>
 
-    <a class="floating-whatsapp" href="#pedido" aria-label="Ir para o formulario de pedido">+</a>
+    <a class="floating-whatsapp" href="#carrinho" aria-label="Ir para o carrinho">+</a>
 
     <script src="./script.js"></script>
   </body>
